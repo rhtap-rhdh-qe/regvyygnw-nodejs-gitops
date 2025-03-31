@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: regvyygnw-nodejs-gitops
+  description: This is GitOps manifest for regvyygnw-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=regvyygnw-nodejs
+    backstage.io/kubernetes-id: regvyygnw-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: regvyygnw-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:regvyygnw-nodejs
